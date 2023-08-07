@@ -3,4 +3,9 @@ let Reader = require("./Reader")
 
 let leitor = new Reader()
 
-leitor.Read("./users.csv")
+const teste = async(file) => {
+    let dado = await leitor.Read(file)
+    console.log(dado)
+}
+
+teste('./users.csv')
