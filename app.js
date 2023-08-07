@@ -1,5 +1,6 @@
-const Reader = require("./Reader")
+// Não pode ser const para importar a classe
+let Reader = require("./Reader")
 
 let leitor = new Reader()
 
-console.log(leitor.Read("users.csv"))
+leitor.Read("./users.csv")
