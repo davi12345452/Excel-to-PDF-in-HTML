@@ -4,6 +4,7 @@ let Processor = require("./Processor")
 let Table = require("./Table")
 let HtmlParser = require("./HtmlParser")
 let Writer = require("./Writer")
+let PDFWriter = require("./PDFWriter")
 
 let leitor = new Reader()
 let escritor = new Writer()
@@ -14,6 +15,7 @@ const teste = async(file) => {
     dadosTabela = new Table(dadosProcess)
     html = await HtmlParser.Parse(dadosTabela)
     await escritor.Write("novoHTML.html", html)
+    PDFWriter.WritePDF('teste.pdf', html)
 }
 
 teste('./users.csv')
