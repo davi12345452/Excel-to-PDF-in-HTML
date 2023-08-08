@@ -8,9 +8,7 @@ let leitor = new Reader()
 const teste = async(file) => {
     let dados= await leitor.Read(file)
     dadosProcess = Processor.Process(dados)
-    console.log(dadosProcess)
     dadosTabela = new Table(dadosProcess)
-    console.log(dadosTabela.header)
 }
 
 teste('./users.csv')
